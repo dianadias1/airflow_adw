@@ -1,0 +1,10 @@
+# Ignorar logs do Airflow
+logs/
+*.log
+
+# Ignorar arquivos temporários
+*.tmp
+*.swp
+
+# Ignorar arquivos do Airflow Scheduler
+airflow.db
