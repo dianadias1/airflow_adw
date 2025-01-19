@@ -1,12 +1,16 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.utils.dates import days_ago
+from airflow.operators.email_operator import EmailOperator
+from datetime import datetime, timedelta 
 
 default_args = {
      'owner': 'airflow',
      'depends_on_past': False,
-     'email_on_failure': False,
+     'email': ['desafioindiciumdiana@gmail.com'],
+     'email_on_failure': True,
      'email_on_retry': False,
+     'email_on_success': True,
      'retries': 1,
 }
 
@@ -15,7 +19,7 @@ with DAG(
      dag_id='adventure_works_dag',
      default_args=default_args,
      description='Executa DBT em Snowflake',
-     schedule_interval="0 2 * * *",  # Scheduled to run at 2 AM
+     schedule_interval="0 2 * * *",
      start_date=days_ago(1),
      catchup=False,
      tags=['dbt', 'snowflake'],
