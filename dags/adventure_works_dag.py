@@ -1,8 +1,6 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.utils.dates import days_ago
-from airflow.operators.email_operator import EmailOperator
-from datetime import datetime, timedelta 
 
 default_args = {
      'owner': 'airflow',
