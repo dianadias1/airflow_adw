@@ -1,4 +1,4 @@
-##ORQUESTRADOR DA ADVENTURE WORKS
+ORQUESTRADOR DA ADVENTURE WORKS
 
 Para esse projeto foi realizada a criação de um DAG com quatro etapas:
 (clone_repo >> dbt_deps >> dbt_run >> dbt_test).
